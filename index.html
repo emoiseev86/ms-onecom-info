@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MS ONECOM — informacje o aplikacji</title>
+<style>
+  :root { --bg: #f7f7f8; --card: #fff; --text: #1d1d22; --muted: #5d5d68; --line: #e3e3e8; --accent: #ff5a00; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #141417; --card: #1d1d22; --text: #ececf1; --muted: #a0a0ab; --line: #2e2e36; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+  header { border-left: 4px solid var(--accent); padding-left: 16px; margin-bottom: 32px; }
+  h1 { margin: 0; font-size: 2rem; letter-spacing: -0.01em; }
+  header p { margin: 4px 0 0; color: var(--muted); }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; }
+  h2 { margin: 0 0 8px; font-size: 1.1rem; }
+  ul { margin: 8px 0 0; padding-left: 20px; }
+  li { margin: 4px 0; }
+  p { margin: 8px 0 0; }
+  footer { color: var(--muted); font-size: 0.875rem; margin-top: 32px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>MS ONECOM</h1>
+    <p>Wewnętrzna aplikacja do zarządzania sprzedażą firmy ONECOM Sp. z o.o.</p>
+  </header>
+
+  <section>
+    <h2>Czym jest aplikacja</h2>
+    <p>MS ONECOM to aplikacja używana wyłącznie wewnątrz firmy ONECOM Sp. z o.o. do obsługi własnego konta
+      sprzedawcy na Allegro. Nie jest udostępniana innym sprzedawcom ani klientom.</p>
+    <p>Aplikacja pomaga planować zakupy towaru, analizować sprzedaż i rentowność oraz obsługiwać wiadomości kupujących.</p>
+  </section>
+
+  <section>
+    <h2>Jak korzysta z Allegro REST API</h2>
+    <ul>
+      <li>Autoryzacja przez OAuth 2.0 (Device flow) — sprzedawca sam potwierdza dostęp na allegro.pl.</li>
+      <li>Domyślnie wyłącznie <b>odczyt danych</b>: oferty (ceny, stany), operacje billingowe, zamówienia, przesyłki,
+        wiadomości, dyskusje i oceny.</li>
+      <li>Aplikacja <b>nie usuwa</b> żadnych danych na Allegro.</li>
+      <li>Ewentualne operacje zapisu (np. odpowiedź na wiadomość) są wykonywane tylko na wyraźne polecenie
+        użytkownika i rejestrowane w dzienniku zmian.</li>
+      <li>Aplikacja przestrzega limitów zapytań (ponawianie z przerwą przy odpowiedzi 429) i korzysta wyłącznie
+        z oficjalnych, udokumentowanych zasobów API.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Bezpieczeństwo danych</h2>
+    <ul>
+      <li>Klucze aplikacji i tokeny dostępu są przechowywane wyłącznie w postaci zaszyfrowanej.</li>
+      <li>Dostęp do aplikacji mają tylko upoważnieni pracownicy firmy (do 5 osób), z podziałem uprawnień.</li>
+      <li>Dane nie są przekazywane osobom trzecim.</li>
+    </ul>
+  </section>
+
+  <footer>© ONECOM Sp. z o.o. · Aplikacja wewnętrzna</footer>
+</main>
+</body>
+</html>
